@@ -20,6 +20,12 @@ app.use("/photos", photoRoute);
 
 app.use("/tags", tagsRoute);
 
+
+
+app.get("/", (req, res)=>{
+    res.send("Welcome to the photo data server!")
+})
+
 app.listen(PORT, () =>{
     console.log(`server running at ${BASE_URL_BACKEND} ${PORT}`); 
 });
