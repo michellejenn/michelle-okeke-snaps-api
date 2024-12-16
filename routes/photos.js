@@ -64,7 +64,7 @@ router.post("/:id/comments", async (req, res) => {
     await writePhotoData(photoData);
 
     res.status(201).send("Successfully posted comment.");
-    
+
   } catch (error) {
     res.status(500).send("Error posting comment.");
   }
@@ -81,12 +81,14 @@ router.get("/:id", async (req, res) => {
     if (!photo) {
       return res.status(404).send("Error: Photo not found");
     }
-
     res.send(photo);
+
   } catch (error) {
     res.status(500).send("Error fetching photo.");
   }
 });
+
+export default router;
 
 
 
@@ -181,4 +183,3 @@ router.get("/:id", async (req, res) => {
   
 // })
 
-export default router;
